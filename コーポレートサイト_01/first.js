@@ -8,6 +8,13 @@ $(function () {
     arrows: false,
   });
 
+  // スクロール
+  $('.inview').on('inview', function(event, isInView) {
+    if (isInView) {
+      $(this).stop().addClass('is-show');
+    }
+  });
+
   // 送信ボタンクリック時の処理
   $('#contactBtn').on('click', function (event) {
     // formタグによる送信を拒否

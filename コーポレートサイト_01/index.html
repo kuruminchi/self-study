@@ -22,6 +22,22 @@
         <a href="index.html#plase">PLASE</a>
         <a href="index.html#contact">CONTACT</a>
       </nav>
+
+      <!-- スマホ用メニューボタン -->
+       <img id="menu-sp" src="image/button-menu.JPG" alt="ナビゲーションを開く" onclick="document.getElementById('nav-sp').style.display = 'block'">
+      <!-- スマホ用ナビゲーション -->
+       <nav id="nav-sp">
+        <img id="close" src="image/button-close.png" alt="ナビゲーションを閉じる" onclick="document.getElementById('nav-sp').style.display = 'none'">
+        <a id="top" href="index.html" alt="トップページに戻る" onclick="document.getElementById('nav-sp').style.display = 'none'">MY PROFILE</a>
+        <a class="menu" href="index.html#about"
+        onclick="document.getElementById('nav-sp').style.display = 'none'">ABOUT</a>
+        <a class="menu" href="index.html#hobby"
+        onclick="document.getElementById('nav-sp').style.display = 'none'">HOBBY</a>
+        <a class="menu" href="index.html#plase"
+        onclick="document.getElementById('nav-sp').style.display = 'none'">PLASE</a>
+        <a class="menu" href="index.html#contact"
+        onclick="document.getElementById('nav-sp').style.display = 'none'">CONTACT</a>
+       </nav>
     </header>
 
     <main>
@@ -43,8 +59,9 @@
         </section>
 
         <!-- about -->
-        <h1 class="title">ABOUT</h1>
         <section id="about">
+          <h1 class="title">ABOUT</h1>
+          <div id="about-parent">
             <div id="about-img">
               <img src="image/me.JPG">
             </div>
@@ -55,12 +72,13 @@
                 <li>現在はエンジニアを目指し「SAMURAIエンジニア」にて学習中</li>
               </ul>
             </div> 
+          </div>  
         </section>
 
         <!-- hobby -->
-        <h1 class="title">HOBBY</h1>
         <section id="hobby">
-          <div>
+          <h1 class="title">HOBBY</h1>
+          <div id="hobby-parent">
             <div class="hobby-box">
               <img src="image/food.JPG">
               <p>食べることが好きです。旅行に行くとご当地の料理を必ず食べます。</p>
@@ -77,67 +95,73 @@
         </section>
 
         <!-- plase -->
-        <h1 class="title">PLASE</h1>
         <section id="plase">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.832943654949!2d135.75619177575697!3d34.98584897281964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108ae918b02ef%3A0xb61a446e74a21c08!2z5Lqs6YO96aeF!5e0!3m2!1sja!2sjp!4v1717043457140!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <h1 class="title">PLASE</h1>
+          <div id="plase-parent">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.832943654949!2d135.75619177575697!3d34.98584897281964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108ae918b02ef%3A0xb61a446e74a21c08!2z5Lqs6YO96aeF!5e0!3m2!1sja!2sjp!4v1717043457140!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>  
         </section>
 
         <!-- contact -->
-        <h1 class="title">CONTACT</h1>
+        
         <section id="contact">
-          <h3>お問い合わせ</h3>
-          <form id="form">
-            <div>
-              <div class="contact-heading">
-                <label class="contact-label">お名前<span class="contact-span">必須</span></label>
+          <h1 class="title">CONTACT</h1>
+          <div id="contact-parent">
+            <h3>お問い合わせ</h3>
+            <form id="form">
+              <div>
+                <div class="contact-heading">
+                  <label class="contact-label">お名前<span class="contact-span">必須</span></label>
+                </div>
+                <div>
+                  <input id="name" type="text" name="username" placeholder="入力してください" class="contact-textbox">
+                </div>
+              </div>  
+              <div>
+                <div class="contact-heading">
+                  <label class="contact-label">フリガナ<span class="contact-span">必須</span></label>
+                </div>
+                <div>
+                  <input id="furigana" type="text" name="furigana" placeholder="入力してください" class="contact-textbox">
+                </div>
               </div>
               <div>
-                <input id="name" type="text" name="username" placeholder="入力してください" class="contact-textbox">
-              </div>
-            </div>  
-            <div>
-              <div class="contact-heading">
-                <label class="contact-label">フリガナ<span class="contact-span">必須</span></label>
-              </div>
-              <div>
-                <input id="furigana" type="text" name="furigana" placeholder="入力してください" class="contact-textbox">
-              </div>
-            </div>
-            <div>
-              <div class="contact-heading">
-                <label class="contact-label">メールアドレス<span class="contact-span">必須</span></label>
+                <div class="contact-heading">
+                  <label class="contact-label">メールアドレス<span class="contact-span">必須</span></label>
+                </div>
+                <div>
+                  <input id="email" type="text" name="email" placeholder="入力してください" class="contact-textbox">
+                </div>
               </div>
               <div>
-                <input id="email" type="text" name="email" placeholder="入力してください" class="contact-textbox">
-              </div>
-            </div>
-            <div>
-              <div class="contact-heading">
-                <label class="contact-label">電話番号</label>
+                <div class="contact-heading">
+                  <label class="contact-label">電話番号</label>
+                </div>
+                <div>
+                  <input id="tel" type="text" name="tel" placeholder="入力してください" class="contact-textbox">
+                </div>
+              </div>  
+              <div>
+                <div class="contact-heading">
+                  <label class="contact-label">お問い合わせ内容<span class="contact-span">必須</span></label>
+                </div>
+                <div>
+                  <textarea id="message" class="contact-textarea" placeholder="入力してください" name="message"></textarea>
+                </div>
               </div>
               <div>
-                <input id="tel" type="text" name="tel" placeholder="入力してください" class="contact-textbox">
+                <div class="contact-heading">
+                  <label class="contact-label">ご希望の連絡先</label>
+                </div>
+                <div>
+                  <input class="radiobutton" type="radio" value="tel" name="contact" checked><label>お電話</label>
+                  <input class="radiobutton" type="radio" value="mail" name="contact" checked><label>メール</label>
+                  <input class="radiobutton" type="radio" value="both" name="contact" checked><label>どちらでも</label>
+                </div>
               </div>
-            </div>  
-            <div>
-              <div class="contact-heading">
-                <label class="contact-label">お問い合わせ内容<span class="contact-span">必須</span></label>
-              </div>
-              <div>
-                <textarea id="message" class="contact-textarea" placeholder="入力してください" name="message"></textarea>
-              </div>
-            </div>
-            <div>
-              <div class="contact-heading">
-                <label class="contact-label">ご希望の連絡先</label>
-              </div>
-              <div>
-                <input class="radiobutton" type="radio" value="tel" name="contact" checked><label>お電話</label>
-                <input class="radiobutton" type="radio" value="mail" name="contact" checked><label>メール</label>
-                <input class="radiobutton" type="radio" value="both" name="contact" checked><label>どちらでも</label>
-              </div>
-            </div>
-            <input id="contactBtn" type="image" src="image/contactbtn.JPG" alt="送信する">
+              <input id="contactBtn" type="image" src="image/contactbtn.JPG" alt="送信する">
+            </form> 
+          </div>   
         </section>
       </article>
     </main>

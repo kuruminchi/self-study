@@ -6,16 +6,28 @@ body {
 p {
   font-size: 15px;
 }
-.title {
-  text-align: center;
-  margin-top: 100px;
-  font-size: 50px;
-  border-bottom: dashed 3px gray;
+
+.fadeIn_up {
+  opacity: 0;
+  transform: translate(0, 50%);
+  transition: 2s;
 }
+.fadeIn_up.is-show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
 
 /* PC用スタイル */
 @media screen and (min-width: 768px) {
-  
+  /* 見出し */
+  .title {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+    border-bottom: dashed 3px gray;
+  }
+
   /* PC用カルーセル設定 */
   .carousel {
     width: 885px;
@@ -80,6 +92,11 @@ p {
     color: black;
   }
 
+  /* スマホ用ナビを非表示 */
+  #nav-sp, #menu-sp {
+    display: none;
+  }
+
 
   /* メイン */
   #main-visual {
@@ -105,7 +122,7 @@ p {
 
 
   /* about */
-  #about {
+  #about-parent {
     display: flex;
     flex-wrap: wrap;
   }
@@ -129,10 +146,10 @@ p {
     font-size: 15px;
     padding-top: 20px;
   }
-
+  
 
   /* hobby */
-  #hobby > div {
+  #hobby-parent {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -152,20 +169,20 @@ p {
 
 
   /* plase */
-  #plase {
+  #plase-parent {
     margin-bottom: 70px;
   }
-  #plase > iframe {
+  #plase-parent > iframe {
     width: 100%;
   }
 
 
   /* contact */
-  #contact {
+  #contact-parent {
     margin-bottom: 70px;
     position: relative;
   }
-  #contact > form > div {
+  #contact-parent > form > div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -260,3 +277,267 @@ p {
     font-size: 10px;
   }
 }  
+
+/* スマートフォン用のスタイル */
+/* 画面幅が767px以下の時 */
+@media screen and (max-width: 767px) {
+  body {
+    min-width: 375px;
+    margin: 0;
+  }
+
+  /* ヘッダー */
+  header > a {
+    font-size: 45px;
+    margin: 10px 0 0 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px gray;
+  }
+  header > a:link {
+    text-decoration: none;
+    color: black;
+  }
+  header > a:visited {
+    color: black;
+  }
+  header > a:hover {
+    color: black;
+  }
+  header > a:active {
+    color: black;
+  }
+
+  /* pc用のナビゲーションを非表示 */
+  #nav-pc {
+    display: none;
+  }
+
+  /* ハンバーガーメニュー */
+  #menu-sp {
+    width: 50px;
+    height: 50px;
+    float: right;
+    padding: 0;
+  }
+
+  /* スマホ用ナビゲーションの表示切替 */
+  /* 初期状態、レイアウトと非表示設定 */
+  #nav-sp {
+    background-color: gray;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 100;
+  }
+
+  /* ×ボタン */
+  #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* ナビゲーションメニュー用題名 */
+  #top {
+    margin: 80px 0 30px 20px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  #top:link {
+    text-decoration: none;
+    color: white;
+  }
+  #top:visited {
+    color: white;
+  }
+  #top:hover {
+    color: white;
+  }
+  #top:active {
+    color: white;
+  }
+
+  /* ナビゲーションのリンク装飾設定 */
+  #nav-sp > a {
+    display: block;
+  }
+  #nav-sp > a:link {
+    color: white;
+  }
+  #nav-sp > a:visited {
+    color: white;
+  }
+  #nav-sp > a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  #nav-sp > a:active {
+    color: white;
+  }
+  #nav-sp > .menu {
+    text-decoration: none;
+    display: block;
+    margin: 0 20px 0 20px;
+    height: 44px;
+    font-size: 16px;
+    background-image: url("image/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  /* 見出し */
+  .title {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 30px;
+    border-bottom: dashed 3px gray;
+  }
+
+  /* メイン（カルーセル） */
+  .carouselImg {
+    width: 100%;
+  }
+
+  /* about */
+  #about-img > img {
+    display: block;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 40px auto 0 auto;
+    box-shadow: 0 10px 25px 0 gray;
+  }
+  #about-message > p {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: gray;
+    border-width: 3px;
+  }
+  #about-message > ul {
+    margin-left: 50px;
+  }
+
+  /* hobby */
+  #hobby-parent {
+    display: block;
+    margin: 40px 50px 0 50px;
+  }
+  .hobby-box > img {
+    width: 100%;
+  }
+  .hobby-box > p {
+    text-align: center;
+  }
+
+  /* plase */
+  #plase-parent {
+    margin: 40px 50px 0 50px;
+  }
+  #plase-parent > iframe {
+    width: 100%;
+  }
+
+  /* contact */
+  #contact-parent {
+    margin: 40px 0 100px 50px;
+  }
+  #contact-parent > form > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+  }
+  .contact-heading {
+    width: 240px;
+    align-self: center;
+  }
+  .contact-label {
+    font-weight: bold;
+  }
+  .contact-span {
+    color: red;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  .contact-textbox {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-width: 1px;
+    border-bottom-color: #707070;
+    border-bottom-style: solid;
+    background-color: #fafafa;
+    width: 400px;
+    height: 56px; 
+  }
+  .contact-textarea {
+    border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom-width: 1px;
+      border-bottom-color: #707070;
+      border-bottom-style: solid;
+      background-color: #fafafa;
+      width: 400px;
+      height: 200px;
+  }
+  #contactBtn {
+    width: 150px;
+    height: 50px;
+  }
+
+  /* フッター */
+  footer {
+    background-color: black;
+    text-align: center;
+    padding: 30px 0;
+  }
+  /* フッター題名 */
+  #footer-title {
+    font-size: 30px;
+  }
+  #footer-title:link {
+    color: white;
+    text-decoration: none;
+  }
+  #footer-title:visited {
+    color: white;
+  }
+  #footer-title:hover {
+    color: white;
+  }
+  #footer-title:active {
+    color: white;
+  }
+  /* フッターリンク */
+  #footer-link {
+    margin: 10px 0;
+  }
+  #footer-link > a {
+    padding: 10px 10px 0 10px;
+  }
+  #footer-link > a:link {
+    color: white;
+    text-decoration: none;
+  }
+  #footer-link > a:visited {
+    color: white;
+  }
+  #footer-link > a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  #footer-link > a:active {
+    color: white;
+  }
+  /* コピーライト */
+  #copyright {
+    color: white;
+    font-size: 10px;
+  }
+}
